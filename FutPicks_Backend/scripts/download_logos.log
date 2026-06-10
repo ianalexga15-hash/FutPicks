@@ -1,0 +1,66 @@
+╔══════════════════════════════════════════════════════════╗
+║   FUTPICKS — Descarga de Logos v3                        ║
+║   Fuentes: ESPN API + thesportsdb (sin API key)          ║
+╚══════════════════════════════════════════════════════════╝
+⏭  default.png ya existe
+
+══ LIGAS ═══════════════════════════════════════════════════
+⏭  premier_league
+⏭  la_liga
+⏭  serie_a
+⏭  bundesliga
+⏭  ligue_1
+⏭  liga_mx
+⏭  eredivisie
+⏭  primeira_liga
+⏭  mls
+⏭  brasileirao
+Ligas: 0 nuevas, 10 ya existentes
+
+Conectando a MySQL...
+✅ MySQL: 270 equipos
+Construyendo mapa de logos ESPN...
+  ESPN eng.1: 20 equipos
+  ESPN esp.1: 20 equipos
+  ESPN ita.1: 20 equipos
+  ESPN ger.1: 18 equipos
+  ESPN fra.1: 18 equipos
+  ESPN mex.1: 18 equipos
+  ESPN ned.1: 18 equipos
+  ESPN por.1: 18 equipos
+  ESPN usa.1: 30 equipos
+  ESPN bra.1: 20 equipos
+Mapa ESPN: 298 entradas
+
+══ EQUIPOS (270) ═══════════════════════════════════════
+[  0%] Ajaccio: notfound
+[  3%] América–MG: ok 128KB
+[ 10%] Avaí: notfound
+[ 10%] AVS Futebol: notfound
+[ 11%] B-SAD: notfound
+[ 13%] Boavista: notfound
+[ 14%] Bordeaux: notfound
+[ 20%] Chaves: notfound
+[ 24%] Criciúma: notfound
+[ 25%] Cuiabá: notfound
+[ 32%] Farense: notfound
+[ 36%] Fortaleza: notfound
+[ 40%] Goiás: notfound
+[ 43%] Hellas Verona: notfound
+[ 47%] Juventude: notfound
+[ 54%] Luton Town: notfound
+[ 56%] Marítimo: notfound
+[ 67%] Paços de Ferreira: notfound
+[ 70%] Pisa: notfound
+[ 70%] Portimonense: notfound
+[ 78%] Salernitana: notfound
+[ 84%] Sport Recife: ok 83KB
+[ 89%] Torreense: notfound
+[ 96%] Vizela: notfound
+
+Equipos: 2 descargados, 246 ya existentes, 22 no encontrados, 0 errores
+
+╔══════════════════════════════════════════════════════════╗
+║   LISTO — 2 logos nuevos descargados             
+║   Revisa scripts/download_logos.log para detalle         ║
+╚══════════════════════════════════════════════════════════╝

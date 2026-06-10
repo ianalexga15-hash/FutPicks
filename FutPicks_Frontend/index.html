@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FutPicks AI — Motor Predictivo</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Familjen+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="12.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M14 1.5C11 6.5 11 21.5 14 26.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M14 1.5C17 6.5 17 21.5 14 26.5" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="1.5" y1="14" x2="26.5" y2="14" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="2.5" y1="9.5"  x2="25.5" y2="9.5"  stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+        <line x1="2.5" y1="18.5" x2="25.5" y2="18.5" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+      </svg>
+    </div>
+    <div>
+      <div class="brand-name">FutPicks</div>
+      <div class="brand-sub">PREDICTION ENGINE</div>
+    </div>
+  </div>
+
+
+  <nav class="sidebar-nav">
+    <!-- PRIMARY: Motor predictivo -->
+    <div class="nav-section">PREDICCIÓN</div>
+    <a class="nl active" data-view="simulator" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="9,1 11.5,6.5 17.5,7.3 13,11.5 14.2,17.5 9,14.5 3.8,17.5 5,11.5 0.5,7.3 6.5,6.5"/></svg>
+      Simulador de Temporada
+      <span class="nl-badge-primary">MAIN</span>
+    </a>
+    <a class="nl" data-view="matchPredict" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="7.5"/><path d="M9 1.5c-2 3-2 13 0 15"/><path d="M9 1.5c2 3 2 13 0 15"/><line x1="1.5" y1="9" x2="16.5" y2="9"/></svg>
+      Predicción de Partido
+    </a>
+    <a class="nl" data-view="montecarlo" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15V3M9 15V6M15 15V9" stroke-linecap="round"/><path d="M3 3l2 2M9 6l2 2M15 9l2 2" opacity=".5"/></svg>
+      Monte Carlo
+      <span class="nl-chip">MC</span>
+    </a>
+
+    <!-- SECONDARY: Datos históricos -->
+    <div class="nav-section">DATOS HISTÓRICOS</div>
+    <a class="nl" data-view="standings" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 16V9M7 16V3M11 16V7M15 16V1" stroke-linecap="round"/></svg>
+      Clasificación
+    </a>
+    <a class="nl" data-view="matches" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="3" width="15" height="12" rx="1.2"/><line x1="1.5" y1="7" x2="16.5" y2="7"/><line x1="6" y1="7" x2="6" y2="15"/></svg>
+      Partidos
+    </a>
+    <a class="nl" data-view="players" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="5.5" r="3"/><path d="M3 16.5a6 6 0 0 1 12 0"/></svg>
+      Jugadores
+    </a>
+    <a class="nl" data-view="teams" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6" r="2.5"/><path d="M1 16a5.5 5.5 0 0 1 11 0"/><circle cx="13" cy="6" r="2.5" opacity=".4"/></svg>
+      Equipos
+    </a>
+    <a class="nl" data-view="backtest" href="#">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9a7 7 0 1 0 14 0A7 7 0 0 0 2 9z"/><path d="M9 5v4l3 2"/><path d="M2 3l3 2.5"/><path d="M2 3l2.5 3"/></svg>
+      Validación
+    </a>
+  </nav>
+
+  <div class="sidebar-foot">
+    <div class="api-row">
+      <span id="sDot" class="s-dot"></span>
+      <span id="sTxt" class="s-txt">Conectando…</span>
+    </div>
+    <div class="engine-badge">Dixon-Coles · Poisson</div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="shell">
+  <header class="topbar">
+    <button id="menuBtn" class="menu-btn">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="4" x2="17" y2="4"/><line x1="1" y1="9" x2="17" y2="9"/><line x1="1" y1="14" x2="17" y2="14"/></svg>
+    </button>
+    <div class="search-zone">
+      <div id="srchBox" class="search-box">
+        <svg class="s-ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"/><line x1="13" y1="13" x2="16.5" y2="16.5"/></svg>
+        <input id="srchInput" type="text" placeholder="Buscar equipo o jugador…" autocomplete="off"/>
+        <kbd>↵</kbd>
+      </div>
+      <div id="srchDrop" class="search-drop hidden"></div>
+    </div>
+    <span id="topbarTitle" class="topbar-title">Simulador de Temporada</span>
+  </header>
+
+  <main id="page"></main>
+</div>
+
+<div id="overlay" class="overlay hidden"></div>
+<div id="toastZone"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
